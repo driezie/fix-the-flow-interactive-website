@@ -1,20 +1,17 @@
-> _Fork_ deze leertaak en ga aan de slag. 
-Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. 
-De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
+<img width="1265" alt="readme-Cover-sprint-5" src="https://github.com/driezie/fix-the-flow-interactive-website/assets/80174866/bc07da8c-ae6b-4eab-81e0-9173e0f1a22e">
 
+# Readme Funda fix-the-flow-interactive-website
+
+[Bekijk hier de documentatie van de website](https://github.com/driezie/fix-the-flow-interactive-website/wiki/Development-Lifecycle)
 # Titel
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
 
-## Beschrijving
-<!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+### Intro
 
 ## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
-
-## Bronnen
+<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? -->
 
 ## Licentie
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
+
