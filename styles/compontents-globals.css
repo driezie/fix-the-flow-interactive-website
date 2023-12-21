@@ -24,10 +24,10 @@ a {
 button,select, fieldset {
     border: none;
     background: none;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
-ul {
+ul { 
     list-style: none;
 }
 
