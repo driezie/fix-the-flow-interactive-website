@@ -57,7 +57,7 @@ main {
             background-position: 100% 100%;
             background-size: cover;
             background-repeat: no-repeat;
-            display: flex;
+            display: none;
             align-items: flex-end;
             justify-content: center;
             z-index: 0;
@@ -68,6 +68,37 @@ main {
                 object-fit: contain;
                 object-position: right;
             }
+        }
+    }
+}
+
+
+/* media */
+
+@media (max-width: 680px) {
+    main {
+        & .banner {
+            /* margin: 0; */
+            gap: 0;
+
+
+            .content {
+                gap: 0;
+                padding: 1.5rem;
+            }
+
+            .search-container fieldset {
+                display: block;
+            }
+
+            .search-filter input {
+                width: 100%;
+            }
+
+            .search-button{
+                margin-top: 10px;
+            }
+            
         }
     }
 }

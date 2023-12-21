@@ -198,67 +198,24 @@
                 <img src="./assets/svg/share-icon.svg" alt="delen met vrienden">
             </a>
             <div class="content">
+                <div class="buttons">
+                    <a href="./groups.html" class="btn btn-secondary">Ga terug</a>
+                </div>
                 <h1>Vrienden appartementen</h1>
                 <p>U heeft deze groep met woningen gedeeld met Piet en Henk.</p>
                 <!-- <div class="buttons"> -->
                     <!-- <a href="#" class="btn btn-primary">Deel met vrienden</a> -->
                 <!-- </div> -->
 
-                <form class="search-container">
+                <form class="search-container" action="#" method="get" id="searchForm">
                     <fieldset>
-                       
                         <div class="search-filter">
-                            <input type="text" placeholder="Zoek op plaats, buurt, adres, etc." id="search">
+                            <input type="text" placeholder="Zoek op plaats, buurt, adres, etc." id="searchInput">
                         </div>
                         <div class="search-button">
-                            <input type="button" name="search" id="search" value="Search">
+                            <input type="submit" name="search" id="searchSubmit" value="Search">
                         </div>
                     </fieldset>
-        
-                    <div class="filter-menu">
-                        <div class="filter-menu-content">
-                            <h3>Filteren</h3>
-                            <div class="filter-menu-item-content">
-                                <ul class="locations">
-                                    Locaties
-                                    <li>
-                                        <input type="checkbox" name="" id="ede">
-                                        <label for="ede">Ede</label>
-                                    </li>
-        
-                                    <li>
-                                        <input type="checkbox" name="" id="ede">
-                                        <label for="ede">Ede</label>
-                                    </li>
-        
-                                    <li>
-                                        <input type="checkbox" name="" id="ede">
-                                        <label for="ede">Ede</label>
-                                    </li>
-                                    
-                                </ul>
-                                <hr class="vertical">
-                                <ul class="locations">
-                                    Locaties
-                                    <li>
-                                        <input type="checkbox" name="" id="ede">
-                                        <label for="ede">Ede</label>
-                                    </li>
-        
-                                    <li>
-                                        <input type="checkbox" name="" id="ede">
-                                        <label for="ede">Ede</label>
-                                    </li>
-        
-                                    <li>
-                                        <input type="checkbox" name="" id="ede">
-                                        <label for="ede">Ede</label>
-                                    </li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                 </form>
             </div>
             <div class="cover-img">
@@ -266,10 +223,8 @@
             </div>
         </div>
 
-        
 
-        
-        <div class="default-grid">
+        <div class="default-grid" id="grid">
             <a class="item" href="">
                 <img class="banner-img" src="https://cloud.funda.nl/valentina_media/179/616/847_1440x960.jpg" alt="Bloemfonteinstraat 8 F">
                 <div class="item-content">
@@ -361,7 +316,38 @@
     <default-footer></default-footer>
 
     
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Bewaar de oorspronkelijke grid-items voor resetten
+            var origineleGrid = $('#grid').html();
     
+            // Verzend formulier en filter grid bij formulierinzending
+            $('#searchForm').submit(function (e) {
+                e.preventDefault(); // zodat de pagina niet herladen wordt
+    
+                var zoekterm = $('#searchInput').val().toLowerCase();
+    
+                // Filter de grid op basis van de zoekterm
+                $('#grid a.item').each(function () {
+                    // set eerst de text in lowercase zodat de zoekterm niet hoofdlettergevoelig is
+                    var eigendomsTitel = $(this).find('h2').text().toLowerCase();
+    
+                    if (eigendomsTitel.includes(zoekterm)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+    
+            // Reset de grid naar hoe het was zonder de filter
+            $('#searchForm').on('reset', function () {
+                $('#grid').html(origineleGrid);
+            });
+        });
+    </script>
 </body>
   <script src="./js/main.js"></script>
   <script src="./js/dropdown.js"></script>

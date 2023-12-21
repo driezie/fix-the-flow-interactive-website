@@ -144,19 +144,23 @@
                 <span>></span>
                 <a href="#">Groepen met Bewaarde huizen</a>
             </div>
-            
-            
-            <a href="#" class="settings-button" title="Settings">
-                <img src="./assets/svg/settings.svg" alt="">
-            </a>
         </div>
 
-        <h1>Groepen met Bewaarde huizen</h1>
+       
 
-        <!-- Filteren en delen opties -->
-        <div class="sort-buttons">
-            <div class="sharedwith">
-                <button class="btn btn-primary">Nieuwe groep</button>
+
+        <div class="banner">
+            <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+
+            <div class="content">
+                <h1>Groepen met Bewaarde huizen</h1>
+                <p>Kies uit de groepen die je hebt aangemaakt of maak een nieuwe groep aan.</p>
+                <div class="buttons">
+                    <a href="#" class="btn btn-primary">Nieuwe groep</a>
+                </div>
+            </div>
+            <div class="cover-img">
+                <img src="./assets/img/cover-houses.png" alt="banner">
             </div>
         </div>
         <div class="content">
@@ -223,6 +227,39 @@
         </div>
     </main>
     <default-footer></default-footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Bewaar de oorspronkelijke grid-items voor resetten
+            var origineleGrid = $('#grid').html();
+    
+            // Verzend formulier en filter grid bij formulierinzending
+            $('#searchForm').submit(function (e) {
+                e.preventDefault(); // zodat de pagina niet herladen wordt
+    
+                var zoekterm = $('#searchInput').val().toLowerCase();
+    
+                // Filter de grid op basis van de zoekterm
+                $('#grid a.item').each(function () {
+                    // set eerst de text in lowercase zodat de zoekterm niet hoofdlettergevoelig is
+                    var eigendomsTitel = $(this).find('h2').text().toLowerCase();
+    
+                    if (eigendomsTitel.includes(zoekterm)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+    
+            // Reset de grid naar hoe het was zonder de filter
+            $('#searchForm').on('reset', function () {
+                $('#grid').html(origineleGrid);
+            });
+        });
+    </script>
 </body>
   <script src="./js/main.js"></script>
   <script src="./js/dropdown.js"></script>

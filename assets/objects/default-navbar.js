@@ -25,7 +25,7 @@ class defaultNavbar extends HTMLElement {
                 </li>
             </ul>
             <nav class="flex">
-                <a href="#" title="Bewaarde huizen">
+                <a href="./groups.html" title="Bewaarde huizen">
                     <img src="./assets/svg/savedhouses.svg" alt="Saved houses icon" class="icon">
                     
                     <span>
@@ -35,7 +35,7 @@ class defaultNavbar extends HTMLElement {
                 <a href="#" title="My account">
                     <img src="./assets/svg/account.svg" alt="Account icon" class="icon">
                     <span>
-                        Lisanne
+                        Jelte
                     </span>
                 </a>
             </nav>

@@ -28,7 +28,30 @@
     header {
         padding:0 12px;
     }
+
+    
 }
+
+
+
+@media (max-width: 1240px) {
+    .default-grid{
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 740px) {
+    .default-grid{
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+}
+
+@media (min-width: 1240px) {
+    .default-grid{
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
 
 @media (min-width: 700px) {
     .sharedwith .list {
@@ -37,6 +60,9 @@
 }
 
 @media (min-width: 940px) {
+    .banner .cover-img {
+        display: flex !important;
+    }
     header nav span {
         display: block;
     }
